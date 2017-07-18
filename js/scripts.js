@@ -1,12 +1,20 @@
 //Business Logic
-function toCost (x){
+function toCost (x, y, z){
 
+  var userMovie = "";
   var matCost = 10;
   var regCost = 20;
-  var output="";
+  var premCost = regCost + 10;
+  var userAge = "";
+  var output = "";
 
-  if (x < 16) {
+  if (x === "dunkirk"){
+    output = premCost;
+  } else if (y < 16) {
     output = matCost;
+  } else if (y >= 16){
+    output = regCost;
+
   } else {
     alert("Complete all fields before submitting");
   };
@@ -23,7 +31,7 @@ $(document).ready(function(){
     var userTime = $("#time").val();
     var userAge = $("#age").val();
 
-    var output = toCost(userTime);
+    var output = toCost(userMovie, userTime, userAge);
   alert (userMovie);
   // alert (output);
 
