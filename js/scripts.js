@@ -7,19 +7,27 @@ function toCost (x, y, z){
   var premCost = regCost + 10;
   var userAge = "";
   var output = "";
+  var output2 = "";
 
   if (x === "dunkirk"){
     output = premCost;
+    if (z === "yes"){
+alert ("pass")
+      output2 = output * .9;
+    } else {
+      output2 = output;
+    };
   } else if (y < 16) {
     output = matCost;
   } else if (y >= 16){
     output = regCost;
-
   } else {
     alert("Complete all fields before submitting");
   };
-  return output;
-  alert (output);
+  // return output;
+  return output2;
+
+
 };
 
 
@@ -33,11 +41,12 @@ $(document).ready(function(){
 
     var output = toCost(userMovie, userTime, userAge);
   alert (userMovie);
-  // alert (output);
+  alert (output);
 
     $(".movie-name").text(userMovie);
     $(".movie-time").text(userTime);
     $(".movie-price").text(output);
+
     $("#show-movie").show();
 
 
